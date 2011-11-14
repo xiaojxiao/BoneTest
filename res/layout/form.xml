@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
+
+    <TableLayout android:layout_width="fill_parent"
+    			 android:layout_height="fill_parent"
+    			 android:layout_marginLeft="10px"
+    			 android:layout_marginTop="10px">
+	    <TableRow>
+	    	<TextView  
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content"
+				android:textSize="14px"
+			    android:text="@string/form_name"
+			    android:textColor="#000000"/>
+			
+			<EditText 
+				android:text="@string/form_name_default" 
+				android:id="@+id/EditText_name" 
+				android:layout_width="150px" 
+				android:layout_height="wrap_content"
+				android:textSize="14px" 
+				android:layout_marginLeft="15px" android:maxLines="1">
+			</EditText>
+	    </TableRow>
+	    
+	    <TableRow>
+	    	<TextView
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content"
+				android:textSize="14px"
+			    android:text="@string/form_sex"
+			    android:textColor="#000000" 
+			    android:paddingTop="12px"/>
+			    
+			<RadioGroup android:orientation="horizontal"
+					android:layout_width="wrap_content"
+		   			android:layout_height="wrap_content"
+		   			android:layout_marginLeft="15px">
+				<RadioButton 
+					android:text="@string/form_male" 
+					android:id="@+id/RadioButton_sex1" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content" 
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:checked="true">
+				</RadioButton>
+					
+				<RadioButton 
+					android:text="@string/form_female" 
+					android:id="@+id/RadioButton_sex2" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content" 
+					android:textColor="#000000"
+					android:textSize="14px"
+		   			android:layout_marginLeft="23px">
+				</RadioButton>
+			</RadioGroup>
+	    </TableRow>
+	    
+	    <TableRow>
+	    	<TextView  
+	    		android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content"
+				android:textSize="14px"
+			    android:text="@string/form_birthday"
+			    android:textColor="#000000" 
+			    android:paddingTop="12px"/>
+		    
+			<RadioGroup android:orientation="horizontal"
+						android:layout_width="wrap_content"
+			   			android:layout_height="wrap_content"
+		   				android:layout_marginLeft="15px">
+				<RadioButton 
+					android:text="@string/form_dateType1" 
+					android:id="@+id/RadioButton_dateType1" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content" 
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:checked="true">
+				</RadioButton>
+				
+				<RadioButton 
+					android:text="@string/form_dateType2" 
+					android:id="@+id/RadioButton_dateType2" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content" 
+					android:textColor="#000000"
+					android:textSize="14px"
+		   			android:layout_marginLeft="10px">
+				</RadioButton>
+			</RadioGroup>
+	    </TableRow>
+	    
+
+	    <LinearLayout>
+		    <Spinner 
+		    	android:id="@+id/Spinner_year" 
+		    	android:layout_width="wrap_content" 
+		    	android:layout_height="wrap_content"/>
+		    		
+		    <Spinner 
+		    	android:id="@+id/Spinner_month" 
+		    	android:layout_width="wrap_content" 
+		    	android:layout_height="wrap_content" />
+		    		
+		    <Spinner 
+		    	android:id="@+id/Spinner_day" 
+		    	android:layout_width="wrap_content" 
+		    	android:layout_height="wrap_content" />
+	    </LinearLayout>
+
+		<TextView  
+	    		android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content"
+				android:textSize="14px"
+			    android:text="@string/form_birthTime"
+			    android:textColor="#000000" 
+			    android:paddingTop="12px"/>
+		
+		<LinearLayout android:layout_marginTop="10px">
+		    <Spinner 
+		    	android:id="@+id/Spinner_hour" 
+		    	android:layout_width="wrap_content" 
+		    	android:layout_height="wrap_content" />
+		    		
+		    <Spinner 
+		    	android:id="@+id/Spinner_minute" 
+		    	android:layout_width="wrap_content" 
+		    	android:layout_height="wrap_content" />
+	    </LinearLayout>
+	    
+	    <RelativeLayout android:layout_marginTop="30px"
+	    			  android:layout_width="fill_parent"
+	    			  android:layout_height="60px"
+	    			  android:orientation="horizontal">
+			<Button 
+				android:text="@string/form_submit" 
+				android:id="@+id/Button_submit" 
+				android:layout_width="100px" 
+				android:layout_height="60px"
+				android:textSize="20px"
+				android:layout_centerInParent="true">
+			</Button>
+		</RelativeLayout>
+    </TableLayout>
+</LinearLayout>

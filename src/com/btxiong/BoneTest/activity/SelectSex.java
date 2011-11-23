@@ -60,6 +60,7 @@ public class SelectSex extends Activity
 				Toast.makeText(context, "This is male", 1000).show();
 				
 				Intent intent = new Intent(SelectSex.this, SelectDateType.class);
+				intent.putExtra("sex", 0);
 				startActivity(intent);
 			}
 		});
@@ -73,6 +74,7 @@ public class SelectSex extends Activity
 				Toast.makeText(context, "This is female", 1000).show();
 				
 				Intent intent = new Intent(SelectSex.this, SelectDateType.class);
+				intent.putExtra("sex", 1);
 				startActivity(intent);
 			}
 		});

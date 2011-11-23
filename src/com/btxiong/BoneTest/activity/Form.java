@@ -438,10 +438,10 @@ public class Form extends Activity
 		intent.putExtra("name", name);
 		intent.putExtra("sex", sex);
 		intent.putExtra("year", year);
-		intent.putExtra("month", year);
-		intent.putExtra("day", year);
-		intent.putExtra("hour", year);
-		intent.putExtra("minute", year);
+		intent.putExtra("month", month);
+		intent.putExtra("day", day);
+		intent.putExtra("hour", hour);
+		intent.putExtra("minute", minute);
 		intent.putExtra("bone", bone);
 		
 		startActivity(intent);

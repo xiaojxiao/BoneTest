@@ -69,14 +69,16 @@ public class BoneCalculate
 	/**
 	 * 根据农历计算称骨
 	 * @param year	年
-	 * @param month	月
-	 * @param day	日
+	 * @param month	月	从1开始
+	 * @param day	日	从1开始
 	 * @param hour	小时
 	 * @param minute	分钟
 	 * @return
 	 */
 	public static int calculate(int year, int month, int day, int hour, int minute)
 	{
+		MyDebug.print(year + " - " + month + " - " + day + " - " + hour + " - " + minute);
+		
 		int bone = 0;
 		
 		if(day >= 29)
@@ -85,8 +87,8 @@ public class BoneCalculate
 		}
 		
 		bone = year_bone[(year-firstYear)%60] + 
-			   month_bone[month-1] +
-			   day_bone[day-1] + 
+			   month_bone[month - 1] +
+			   day_bone[day - 1] + 
 			   time_bone[getLunarTimeIndex(hour)];
 		
 		return bone;
@@ -95,8 +97,8 @@ public class BoneCalculate
 	/**
 	 * 根据公历计算称骨
 	 * @param year	年
-	 * @param month	月
-	 * @param day	日
+	 * @param month	月	从1开始
+	 * @param day	日	从1开始
 	 * @param hour	小时
 	 * @param minute	分钟
 	 * @return

@@ -31,15 +31,15 @@
 
 	    <ImageButton
 	        android:id="@+id/btn_new_cal"
-	        android:layout_width="150dip"
-	        android:layout_height="300dip"
-	        android:src="@drawable/btn_male_bg" android:background="#00000000" android:scaleType="fitXY"/>
+	        android:layout_width="123dip"
+	        android:layout_height="159dip"
+	        android:src="@drawable/btn_new_cal_bg" android:background="#00000000" android:scaleType="fitXY" android:layout_marginRight="10dip"/>
 	    
 	    <ImageButton
 	        android:id="@+id/btn_old_cal"
-	        android:layout_width="150dip"
-	        android:layout_height="300dip"
-	        android:src="@drawable/btn_female_bg" android:background="#00000000" android:scaleType="fitXY"/>
+	        android:layout_width="123dip"
+	        android:layout_height="159dip"
+	        android:src="@drawable/btn_old_cal_bg" android:background="#00000000" android:scaleType="fitXY" android:layout_marginLeft="10dip"/>
     
     </LinearLayout>
     

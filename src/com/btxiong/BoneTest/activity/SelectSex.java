@@ -48,8 +48,8 @@ public class SelectSex extends Activity
 		});
         
         //使用自定义字体
-        Typeface tf = Typeface.createFromAsset(getAssets(),"KAIU.TTF");
-        txt_hint_sex.setTypeface(tf);
+        //Typeface tf = Typeface.createFromAsset(getAssets(),"font.ttf");
+        //txt_hint_sex.setTypeface(tf);
         
         btn_male.setOnClickListener(new OnClickListener()
 		{
@@ -57,7 +57,7 @@ public class SelectSex extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(context, "This is male", 1000).show();
+				//Toast.makeText(context, "This is male", 1000).show();
 				
 				Intent intent = new Intent(SelectSex.this, SelectDateType.class);
 				intent.putExtra("sex", 0);
@@ -71,7 +71,7 @@ public class SelectSex extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(context, "This is female", 1000).show();
+				//Toast.makeText(context, "This is female", 1000).show();
 				
 				Intent intent = new Intent(SelectSex.this, SelectDateType.class);
 				intent.putExtra("sex", 1);

@@ -51,8 +51,8 @@ public class SelectDateType extends Activity
 		});
         
         //使用自定义字体
-        Typeface tf = Typeface.createFromAsset(getAssets(),"KAIU.TTF");
-        txt_hint_date_type.setTypeface(tf);
+        //Typeface tf = Typeface.createFromAsset(getAssets(),"font.ttf");
+        //txt_hint_date_type.setTypeface(tf);
         
         btn_new_cal.setOnClickListener(new OnClickListener()
 		{
@@ -60,7 +60,7 @@ public class SelectDateType extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(context, "This is btn_new_cal", 1000).show();
+				//Toast.makeText(context, "This is btn_new_cal", 1000).show();
 				
 				Intent intent = new Intent(SelectDateType.this, SelectDate.class);
 				intent.putExtra("sex", sex);
@@ -75,7 +75,7 @@ public class SelectDateType extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(context, "This is btn_old_cal", 1000).show();
+				//Toast.makeText(context, "This is btn_old_cal", 1000).show();
 				
 				Intent intent = new Intent(SelectDateType.this, SelectDate.class);
 				intent.putExtra("sex", sex);

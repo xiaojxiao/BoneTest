@@ -55,6 +55,28 @@ public class Menu extends Activity
 			}
 		});
         
+        btn_list.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				Intent intent = new Intent(Menu.this, HistoryList.class);
+				startActivity(intent);
+			}
+		});
+        
+        btn_celebrity.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				Intent intent = new Intent(Menu.this, CelebrityList.class);
+				startActivity(intent);
+			}
+		});
+        
+        BoneDAO boneDAO = new BoneDAO(context);
+        
         /*
         InsertCelebrity insertCelebrity = new InsertCelebrity(context);
         insertCelebrity.Execute();

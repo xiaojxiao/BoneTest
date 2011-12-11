@@ -19,6 +19,7 @@ public class SelectDateType extends Activity
 	public static Context context;
 	
 	public static ImageButton btn_back2;
+	public static ImageButton btn_menu2;
 	public static ImageButton btn_new_cal;
 	public static ImageButton btn_old_cal;
 	public static TextView txt_hint_date_type;
@@ -35,6 +36,7 @@ public class SelectDateType extends Activity
         sex = getIntent().getExtras().getInt("sex");
         
         btn_back2 = (ImageButton) findViewById(R.id.btn_back2);
+        btn_menu2 = (ImageButton) findViewById(R.id.btn_menu2);
         btn_new_cal = (ImageButton) findViewById(R.id.btn_new_cal);
         btn_old_cal = (ImageButton) findViewById(R.id.btn_old_cal);
         txt_hint_date_type = (TextView) findViewById(R.id.txt_hint_date_type);
@@ -46,6 +48,16 @@ public class SelectDateType extends Activity
 			public void onClick(View v)
 			{
 				Intent intent = new Intent(SelectDateType.this, SelectSex.class);
+				startActivity(intent);
+			}
+		});
+        
+        btn_menu2.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				Intent intent = new Intent(SelectDateType.this, Menu.class);
 				startActivity(intent);
 			}
 		});

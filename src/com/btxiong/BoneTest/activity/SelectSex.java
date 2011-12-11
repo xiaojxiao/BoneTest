@@ -19,6 +19,7 @@ public class SelectSex extends Activity
 	public static Context context;
 	
 	public static ImageButton btn_back1;
+	public static ImageButton btn_menu1;
 	public static ImageButton btn_male;
 	public static ImageButton btn_female;
 	public static TextView txt_hint_sex;
@@ -32,6 +33,7 @@ public class SelectSex extends Activity
         context = this;
         
         btn_back1 = (ImageButton) findViewById(R.id.btn_back1);
+        btn_menu1 = (ImageButton) findViewById(R.id.btn_menu1);
         btn_male = (ImageButton) findViewById(R.id.btn_male);
         btn_female = (ImageButton) findViewById(R.id.btn_female);
         txt_hint_sex = (TextView) findViewById(R.id.txt_hint_sex);
@@ -39,6 +41,16 @@ public class SelectSex extends Activity
         btn_back1.setOnClickListener(new OnClickListener()
 		{
 			
+			@Override
+			public void onClick(View v)
+			{
+				Intent intent = new Intent(SelectSex.this, Menu.class);
+				startActivity(intent);
+			}
+		});
+        
+        btn_menu1.setOnClickListener(new OnClickListener()
+		{
 			@Override
 			public void onClick(View v)
 			{

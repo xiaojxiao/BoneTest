@@ -1,5 +1,6 @@
 package com.btxiong.BoneTest.activity;
 
+import android.R.integer;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -13,8 +14,10 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.btxiong.BoneTest.R;
+import com.btxiong.BoneTest.data.BoneDAO;
 import com.btxiong.BoneTest.util.BoneCalculate;
 import com.btxiong.BoneTest.util.MyDebug;
 
@@ -30,18 +33,23 @@ public class Result extends Activity
 	public static int hour;
 	public static int minute;
 	public static int bone;
+	public static int activity_type;
 	
 	public static TextView txt_result1;
 	public static TextView txt_result2;
 	public static TextView txt_result3;
 	
 	public static ImageButton btn_back4;
+	public static ImageButton btn_menu4;
 	public static Button btn_save;
 	public static Button btn_replay;
 	
 	public static View name_input_layout;
+	public static AlertDialog name_input_dialog;
 	
 	public static int INPUT_DIALOG_ID = 3;
+	
+	public static BoneDAO boneDAO;
 	
     public void onCreate(Bundle savedInstanceState) 
     {
@@ -59,8 +67,10 @@ public class Result extends Activity
         day = extras.getInt("day");
         hour = extras.getInt("hour");
         minute = extras.getInt("minute");
+        activity_type = extras.getInt("activity_type");
         
         btn_back4 = (ImageButton) findViewById(R.id.btn_back4);
+        btn_menu4 = (ImageButton) findViewById(R.id.btn_menu4);
         txt_result1 = (TextView) findViewById(R.id.txt_result1);
         txt_result2 = (TextView) findViewById(R.id.txt_result2);
         txt_result3 = (TextView) findViewById(R.id.txt_result3);
@@ -70,6 +80,47 @@ public class Result extends Activity
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
         name_input_layout = inflater.inflate(R.layout.name_input, null);
         Button btn_name_confirm = (Button) name_input_layout.findViewById(R.id.btn_name_confirm);
+        Button btn_name_cancel = (Button) name_input_layout.findViewById(R.id.btn_name_cancel);
+        
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setView(name_input_layout);
+		name_input_dialog = builder.create();
+		name_input_dialog.setTitle(getString(R.string.txt_name_input_title));
+		
+		boneDAO = new BoneDAO(context);
+		
+		btn_name_confirm.setOnClickListener(new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+		        TextView textView = (TextView) name_input_layout.findViewById(R.id.edit_text_name);
+		        
+		        if(date_type == 1)
+		        {
+		        	boneDAO.insertBone(textView.getText().toString(), sex, year, month, day, hour, minute, 0);
+		        }
+		        else 
+		        {
+		        	boneDAO.insertBoneAD(textView.getText().toString(), sex, year, month, day, hour, minute, 0);
+				}
+				
+				name_input_dialog.dismiss();
+				
+				Toast.makeText(context, context.getString(R.string.txt_name_input_success), 1000).show();
+			}
+		});
+		
+		btn_name_cancel.setOnClickListener(new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				name_input_dialog.cancel();
+			}
+		});
         
         btn_back4.setOnClickListener(new OnClickListener()
 		{
@@ -77,6 +128,26 @@ public class Result extends Activity
 			public void onClick(View v)
 			{
 				Intent intent = new Intent(Result.this, SelectDate.class);
+				
+				if(activity_type == 1)
+				{
+					intent = new Intent(Result.this, HistoryList.class);
+				}
+				else if(activity_type == 2)
+				{
+					intent = new Intent(Result.this, CelebrityList.class);
+				}
+				
+				startActivity(intent);
+			}
+		});
+        
+        btn_menu4.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				Intent intent = new Intent(Result.this, Menu.class);
 				startActivity(intent);
 			}
 		});
@@ -87,23 +158,8 @@ public class Result extends Activity
 			public void onClick(View v)
 			{
 				MyDebug.print("btn_save.....................");
-				
-				LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
-				View layout = inflater.inflate(R.layout.name_input, null);
-				
-				AlertDialog.Builder builder = new AlertDialog.Builder(context);
-				builder.setView(layout);
-				AlertDialog alertDialog = builder.create();
-				alertDialog.setTitle("请输入名字");
-				alertDialog.show();
-				
-				/*
-				Dialog dialog = new Dialog(context);
-				
-				dialog.setContentView(R.layout.name_input);
-				dialog.setTitle("请输入名字");
-				showDialog(INPUT_DIALOG_ID);
-				*/
+
+				name_input_dialog.show();
 			}
 		});
         
@@ -116,6 +172,12 @@ public class Result extends Activity
 				startActivity(intent);
 			}
 		});
+        
+        if(activity_type == 1 || activity_type == 2)
+        {
+        	btn_save.setVisibility(View.INVISIBLE);
+        	btn_replay.setVisibility(View.INVISIBLE);
+        }
         
         if(date_type == 1)
         {

@@ -21,13 +21,16 @@
     <string name="btn_txt_replay">重测</string>
     <string name="btn_txt_ok">确定</string>
     <string name="btn_txt_cancel">取消</string>
-    
+   
     <string name="form_year_str">年</string>
     <string name="form_month_str">月</string>
     <string name="form_day_str">日</string>
     <string name="form_hour_str">时</string>
     <string name="form_minute_str">分</string>
      
+    <string name="txt_name_input_title">请输入名字</string>
+    <string name="txt_name_input_success">记录保存成功！</string>
+    
     <string name="menu_about">关于</string> 
     <string name="menu_close">结束</string> 
     <string name="msg_about">袁天罡称骨算命\n版本:1.32\n版本所有者:BT熊</string> 

@@ -4,9 +4,23 @@ import com.btxiong.BoneTest.R;
 
 public class Constant
 {
-	public static String PARSE_APP_ID = "tIj4Tgjlv9ZJ4fdcrPK4efL6jflqlS77s3SF9uFk";
-	public static String PARSE_CLIENT_KEY = "Y3BG65h11isYSeYA4BKEersKyKjnQxRw5mBJrOPW";
-	public static String PARSE_MASTER_KEY = "BZRaXTC0xhDeq6TMlluDka6bh3OWP4XI8Kocymnv";
+	public static String PARSE_APP_ID = "bYklOp6HjnFhuFX5YuRYNOXMYLpLgdi5ff9savLp";
+	public static String PARSE_CLIENT_KEY = "M3EEqyLcPejt8ZZ3SmoWve4py8qdGxYZek3nbOmb";
+	public static String PARSE_MASTER_KEY = "lIJ10NwHG5pxtAeO4dHMWl5LfiahCBCQM5P48TuQ";
+	
+	public static int TYPE_SEX_MALE = 0;
+	public static int TYPE_SEX_FEMALE = 1;
+	
+	public static int TYPE_DATE_LUNAR = 0;
+	public static int TYPE_DATE_AD = 1;
+	
+	public static int TYPE_ACTIVITY_NORMAL = 0;
+	public static int TYPE_ACTIVITY_HISTORY = 0;
+	public static int TYPE_ACTIVITY_CELEBRITY = 0;
+
+	public static int TYPE_RECORD_NORMAL = 0;
+	public static int TYPE_RECORD_CELEBRITY = 1;
+	
 	
 	//天干
 	public static int[] STR_TIAN_GAN_ID = {

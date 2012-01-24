@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.btxiong.BoneTest.R;
+import com.btxiong.BoneTest.util.Constant;
 
 public class SelectDateType extends Activity 
 {
@@ -76,7 +77,7 @@ public class SelectDateType extends Activity
 				
 				Intent intent = new Intent(SelectDateType.this, SelectDate.class);
 				intent.putExtra("sex", sex);
-				intent.putExtra("date_type", 0);
+				intent.putExtra("date_type", Constant.TYPE_DATE_AD);
 				startActivity(intent);
 			}
 		});
@@ -91,7 +92,7 @@ public class SelectDateType extends Activity
 				
 				Intent intent = new Intent(SelectDateType.this, SelectDate.class);
 				intent.putExtra("sex", sex);
-				intent.putExtra("date_type", 1);
+				intent.putExtra("date_type", Constant.TYPE_DATE_LUNAR);
 				startActivity(intent);
 			}
 		});

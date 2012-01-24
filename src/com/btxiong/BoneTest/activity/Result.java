@@ -1,9 +1,9 @@
 package com.btxiong.BoneTest.activity;
 
-import android.R.integer;
+import java.util.List;
+
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +19,15 @@ import android.widget.Toast;
 import com.btxiong.BoneTest.R;
 import com.btxiong.BoneTest.data.BoneDAO;
 import com.btxiong.BoneTest.util.BoneCalculate;
+import com.btxiong.BoneTest.util.Constant;
 import com.btxiong.BoneTest.util.MyDebug;
+import com.btxiong.BoneTest.util.ServerUtil;
+import com.parse.CountCallback;
+import com.parse.FindCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 public class Result extends Activity 
 {
@@ -34,6 +42,8 @@ public class Result extends Activity
 	public static int minute;
 	public static int bone;
 	public static int activity_type;
+	public static String bone_str;
+	public static String bone_result;
 	
 	public static TextView txt_result1;
 	public static TextView txt_result2;
@@ -43,6 +53,7 @@ public class Result extends Activity
 	public static ImageButton btn_menu4;
 	public static Button btn_save;
 	public static Button btn_replay;
+	public static Button btn_share;
 	
 	public static View name_input_layout;
 	public static AlertDialog name_input_dialog;
@@ -76,6 +87,7 @@ public class Result extends Activity
         txt_result3 = (TextView) findViewById(R.id.txt_result3);
         btn_save = (Button) findViewById(R.id.btn_save);
         btn_replay = (Button) findViewById(R.id.btn_replay);
+        btn_share = (Button) findViewById(R.id.btn_share);
         
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
         name_input_layout = inflater.inflate(R.layout.name_input, null);
@@ -97,13 +109,13 @@ public class Result extends Activity
 			{
 		        TextView textView = (TextView) name_input_layout.findViewById(R.id.edit_text_name);
 		        
-		        if(date_type == 1)
+		        if(date_type == Constant.TYPE_DATE_LUNAR)
 		        {
-		        	boneDAO.insertBone(textView.getText().toString(), sex, year, month, day, hour, minute, 0);
+		        	boneDAO.insertBone(textView.getText().toString(), sex, year, month, day, hour, minute, Constant.TYPE_RECORD_NORMAL);
 		        }
 		        else 
 		        {
-		        	boneDAO.insertBoneAD(textView.getText().toString(), sex, year, month, day, hour, minute, 0);
+		        	boneDAO.insertBoneAD(textView.getText().toString(), sex, year, month, day, hour, minute, Constant.TYPE_RECORD_NORMAL);
 				}
 				
 				name_input_dialog.dismiss();
@@ -129,11 +141,11 @@ public class Result extends Activity
 			{
 				Intent intent = new Intent(Result.this, SelectDate.class);
 				
-				if(activity_type == 1)
+				if(activity_type == Constant.TYPE_ACTIVITY_HISTORY)
 				{
 					intent = new Intent(Result.this, HistoryList.class);
 				}
-				else if(activity_type == 2)
+				else if(activity_type == Constant.TYPE_ACTIVITY_CELEBRITY)
 				{
 					intent = new Intent(Result.this, CelebrityList.class);
 				}
@@ -173,13 +185,32 @@ public class Result extends Activity
 			}
 		});
         
-        if(activity_type == 1 || activity_type == 2)
+        btn_share.setOnClickListener(new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				Intent intent = new Intent(Intent.ACTION_SEND);
+			    intent.setType("text/plain");
+			    intent.putExtra(Intent.EXTRA_TEXT, bone_str);  
+			    startActivity(Intent.createChooser(intent, "Share with"));
+			
+			}
+		});
+        
+        if(activity_type != Constant.TYPE_ACTIVITY_NORMAL)
         {
         	btn_save.setVisibility(View.INVISIBLE);
         	btn_replay.setVisibility(View.INVISIBLE);
         }
+        else
+        {
+        	btn_save.setVisibility(View.VISIBLE);
+        	btn_replay.setVisibility(View.VISIBLE);
+        }
         
-        if(date_type == 1)
+        if(date_type == Constant.TYPE_DATE_LUNAR)
         {
         	bone = BoneCalculate.calculate(year, month, day, hour, minute);
         }
@@ -188,10 +219,20 @@ public class Result extends Activity
         	bone = BoneCalculate.calculateAD(year, month, day, hour, minute);
 		}
         
-        String bone_str = bone / 10 + "兩" + bone % 10 + "錢";
-		String bone_result = BoneCalculate.getResultString(context, bone, sex);
+        bone_str = bone / 10 + "兩" + bone % 10 + "錢";
+		bone_result = BoneCalculate.getResultString(context, bone, sex);
 		bone_result = bone_result.replace("，", "，\n");
 		
         txt_result1.setText(bone_str + "\n\n" + bone_result);
+        
+        ServerUtil serverUtil = new ServerUtil(this);
+        serverUtil.getBoneCount(bone, new FindCallback()
+		{
+			public void done(List<ParseObject> objects, ParseException e)
+			{
+				
+				
+			}
+		});
     }
 }

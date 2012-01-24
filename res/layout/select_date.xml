@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="40dip"
+	    android:orientation="horizontal" android:background="@drawable/top_bg" android:gravity="center_vertical" android:paddingLeft="5dip" android:paddingRight="5dip">
+	        <ImageButton
+	            android:id="@+id/btn_back3"
+	            android:layout_width="51dip"
+	            android:layout_height="22dip"
+	            android:src="@drawable/btn_back" android:background="#00000000" android:scaleType="fitXY"/>
+        
+	        <LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:orientation="horizontal"  android:gravity="right|center_vertical">
+			    
+		        <ImageButton
+		            android:id="@+id/btn_menu3"
+		            android:layout_width="51dip"
+		            android:layout_height="22dip"
+		            android:src="@drawable/btn_menu" android:background="#00000000" android:scaleType="fitXY"/>
+	        
+	         </LinearLayout>
+	</LinearLayout>
+	
+    <TextView
+		    android:id="@+id/txt_hint_date"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="請選擇日期：" android:textColor="#000000" android:layout_marginLeft="15dip" android:layout_marginTop="20dip" android:textSize="18dip" android:textStyle="bold"/>
+	
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical" android:gravity="center_vertical|center_horizontal" android:layout_weight="1" android:layout_marginBottom="100dip">
+        
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_gravity="center_horizontal">
+	        
+	        <kankan.wheel.widget.WheelView android:id="@+id/wheel_year"
+	            android:layout_height="wrap_content"
+	            android:layout_width="90dip"/>   
+	        <kankan.wheel.widget.WheelView android:id="@+id/wheel_month"
+	            android:layout_height="wrap_content"
+	            android:layout_width="90dip"/>
+	        <kankan.wheel.widget.WheelView android:id="@+id/wheel_day"
+	            android:layout_height="wrap_content"
+	            android:layout_width="90dip"/>
+	        
+	    </LinearLayout>
+	    
+	    
+	   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="20dip">
+	  
+		  	<kankan.wheel.widget.WheelView android:id="@+id/wheel_hour"
+				android:layout_height="wrap_content"
+				android:layout_width="90dip"/>
+			<kankan.wheel.widget.WheelView android:id="@+id/wheel_minute"
+				android:layout_height="wrap_content"
+				android:layout_width="90dip"/>
+		</LinearLayout>
+    </LinearLayout>
+    
+    <Button
+		    android:id="@+id/btn_select_date_ok"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_width="90dip"
+		    android:layout_height="45dip"
+		    android:layout_marginBottom="20dip"
+ 			android:background="@drawable/btn_bg_click" android:text="@string/btn_txt_ok" android:textColor="#FFCC33" android:textSize="18dip"/>
+    
+</LinearLayout>

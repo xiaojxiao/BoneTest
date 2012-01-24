@@ -21,6 +21,7 @@
     <string name="btn_txt_replay">重测</string>
     <string name="btn_txt_ok">确定</string>
     <string name="btn_txt_cancel">取消</string>
+    <string name="btn_txt_share">分享</string>
    
     <string name="form_year_str">年</string>
     <string name="form_month_str">月</string>

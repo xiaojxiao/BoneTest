@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.btxiong.BoneTest.R;
+import com.btxiong.BoneTest.util.Constant;
 
 public class SelectSex extends Activity 
 {
@@ -72,7 +73,7 @@ public class SelectSex extends Activity
 				//Toast.makeText(context, "This is male", 1000).show();
 				
 				Intent intent = new Intent(SelectSex.this, SelectDateType.class);
-				intent.putExtra("sex", 0);
+				intent.putExtra("sex", Constant.TYPE_SEX_MALE);
 				startActivity(intent);
 			}
 		});
@@ -86,7 +87,7 @@ public class SelectSex extends Activity
 				//Toast.makeText(context, "This is female", 1000).show();
 				
 				Intent intent = new Intent(SelectSex.this, SelectDateType.class);
-				intent.putExtra("sex", 1);
+				intent.putExtra("sex", Constant.TYPE_SEX_FEMALE);
 				startActivity(intent);
 			}
 		});

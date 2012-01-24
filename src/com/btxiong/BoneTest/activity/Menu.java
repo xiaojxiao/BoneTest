@@ -19,6 +19,7 @@ import com.btxiong.BoneTest.data.BoneObject;
 import com.btxiong.BoneTest.data.InsertCelebrity;
 import com.btxiong.BoneTest.util.Constant;
 import com.btxiong.BoneTest.util.MyDebug;
+import com.btxiong.BoneTest.util.ServerUtil;
 import com.parse.CountCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -75,12 +76,11 @@ public class Menu extends Activity
 			}
 		});
         
-        BoneDAO boneDAO = new BoneDAO(context);
+        //BoneDAO boneDAO = new BoneDAO(context);
         
-        /*
         InsertCelebrity insertCelebrity = new InsertCelebrity(context);
         insertCelebrity.Execute();
-        
+        /*
         //check version code
 		int newVersionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
 
@@ -130,6 +130,7 @@ public class Menu extends Activity
             }
         });
         */
-        
+        ServerUtil serverUtil = new ServerUtil(this);
+        serverUtil.addBone(22, 12345);
     }
 }

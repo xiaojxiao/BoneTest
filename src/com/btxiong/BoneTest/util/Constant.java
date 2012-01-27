@@ -15,8 +15,8 @@ public class Constant
 	public static int TYPE_DATE_AD = 1;
 	
 	public static int TYPE_ACTIVITY_NORMAL = 0;
-	public static int TYPE_ACTIVITY_HISTORY = 0;
-	public static int TYPE_ACTIVITY_CELEBRITY = 0;
+	public static int TYPE_ACTIVITY_HISTORY = 1;
+	public static int TYPE_ACTIVITY_CELEBRITY = 2;
 
 	public static int TYPE_RECORD_NORMAL = 0;
 	public static int TYPE_RECORD_CELEBRITY = 1;
@@ -174,5 +174,58 @@ public class Constant
 		R.string.result_f_69,
 		R.string.result_f_70,
 		R.string.result_f_71
+	};
+	
+	public static int[] STR_DETAIL_ID = {
+		R.string.result_detail_22,
+		R.string.result_detail_23,
+		R.string.result_detail_24,
+		R.string.result_detail_25,
+		R.string.result_detail_26,
+		R.string.result_detail_27,
+		R.string.result_detail_28,
+		R.string.result_detail_29,
+		R.string.result_detail_30,
+		R.string.result_detail_31,
+		R.string.result_detail_32,
+		R.string.result_detail_33,
+		R.string.result_detail_34,
+		R.string.result_detail_35,
+		R.string.result_detail_36,
+		R.string.result_detail_37,
+		R.string.result_detail_38,
+		R.string.result_detail_39,
+		R.string.result_detail_40,
+		R.string.result_detail_41,
+		R.string.result_detail_42,
+		R.string.result_detail_43,
+		R.string.result_detail_44,
+		R.string.result_detail_45,
+		R.string.result_detail_46,
+		R.string.result_detail_47,
+		R.string.result_detail_48,
+		R.string.result_detail_49,
+		R.string.result_detail_50,
+		R.string.result_detail_51,
+		R.string.result_detail_52,
+		R.string.result_detail_53,
+		R.string.result_detail_54,
+		R.string.result_detail_55,
+		R.string.result_detail_56,
+		R.string.result_detail_57,
+		R.string.result_detail_58,
+		R.string.result_detail_59,
+		R.string.result_detail_60,
+		R.string.result_detail_61,
+		R.string.result_detail_62,
+		R.string.result_detail_63,
+		R.string.result_detail_64,
+		R.string.result_detail_65,
+		R.string.result_detail_66,
+		R.string.result_detail_67,
+		R.string.result_detail_68,
+		R.string.result_detail_69,
+		R.string.result_detail_70,
+		R.string.result_detail_71
 	};
 }

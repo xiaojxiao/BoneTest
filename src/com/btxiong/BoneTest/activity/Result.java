@@ -225,6 +225,8 @@ public class Result extends Activity
 		
         txt_result1.setText(bone_str + "\n\n" + bone_result);
         
+        txt_result2.setText(getString(Constant.STR_DETAIL_ID[bone - 22]));
+        
         ServerUtil serverUtil = new ServerUtil(this);
         serverUtil.getBoneCount(bone, new FindCallback()
 		{

@@ -66,7 +66,7 @@
 			    android:layout_width="fill_parent" 
 			    android:layout_height="fill_parent" 
 			    android:id="@+id/txt_result2"
-			    android:text="注解：此命推来敬重双亲，有福有禄，六亲和睦，义气高强，少年勤学有功名，忠孝双 全，心中无毒，不贵则福，出外受人钦佩，四海闻名，老来荣华，限上无忧，一生安康 ，年轻欠利，末限安享福禄，白鹤先生云：此命三限，有子孙旺相局，初限早成家计， 辛勤劳苦，中限渐渐生财重奔江山，夫妻少配无刑，末限荣华富贵，寿元八十三岁，死 于冬月之中。注解：此命推来敬重双亲，有福有禄，六亲和睦，义气高强，少年勤学有功名，忠孝双 全，心中无毒，不贵则福，出外受人钦佩，四海闻名，老来荣华，限上无忧，一生安康 ，年轻欠利，末限安享福禄，白鹤先生云：此命三限，有子孙旺相局，初限早成家计， 辛勤劳苦，中限渐渐生财重奔江山，夫妻少配无刑，末限荣华富贵，寿元八十三岁，死 于冬月之中。"
+			    android:text=""
 			    android:textSize="18px"
 				android:textColor="#000000" android:paddingLeft="10dip" android:paddingRight="10dip"/>
 	    
@@ -80,7 +80,7 @@
 			    android:layout_width="fill_parent" 
 			    android:layout_height="fill_parent" 
 			    android:id="@+id/txt_result3"
-			    android:text="全世界有100个人和你一样哦！"
+			    android:text="@string/result_peer_count_default"
 			    android:textSize="18px"
 				android:textColor="#000000"
 				android:gravity="center"

@@ -20,13 +20,13 @@ public class ServerUtil
 		Parse.initialize(context, Constant.PARSE_APP_ID, Constant.PARSE_CLIENT_KEY);
 	}
 	
-	public void addBone(int bone, int new_count)
+/*	public void addBone(ParseObject object, int bone, int new_count)
 	{
 		ParseObject parseObject = new ParseObject(OBJECT_NAME);
 		parseObject.put("bone", bone);
 		parseObject.put("count", new_count);
 		parseObject.saveInBackground();
-	}
+	}*/
 	
 	public void getBoneCount(int bone, FindCallback callback)
 	{

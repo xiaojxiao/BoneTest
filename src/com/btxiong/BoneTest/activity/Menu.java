@@ -130,7 +130,5 @@ public class Menu extends Activity
             }
         });
         */
-        ServerUtil serverUtil = new ServerUtil(this);
-        serverUtil.addBone(22, 12345);
     }
 }

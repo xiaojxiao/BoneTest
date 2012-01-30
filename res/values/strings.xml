@@ -34,8 +34,10 @@
     
     <string name="menu_about">关于</string> 
     <string name="menu_close">结束</string> 
-    <string name="msg_about">袁天罡称骨算命\n版本:1.32\n版本所有者:BT熊</string> 
-     
+    <string name="msg_about">袁天罡称骨算命\n版本:1.32\n版本所有者:BT熊</string>
+    
+    <string name="result_peer_count_default">查询数据中...</string> 
+    <string name="result_peer_count">全世界有%1$d个人和你一样哦！</string> 
      
     <string name="TianGan_0">甲</string> 
     <string name="TianGan_1">乙</string> 

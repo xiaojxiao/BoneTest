@@ -28,6 +28,7 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.SaveCallback;
 
 public class Result extends Activity 
 {
@@ -61,6 +62,8 @@ public class Result extends Activity
 	public static int INPUT_DIALOG_ID = 3;
 	
 	public static BoneDAO boneDAO;
+	
+	public ServerUtil serverUtil;
 	
     public void onCreate(Bundle savedInstanceState) 
     {
@@ -227,13 +230,30 @@ public class Result extends Activity
         
         txt_result2.setText(getString(Constant.STR_DETAIL_ID[bone - 22]));
         
-        ServerUtil serverUtil = new ServerUtil(this);
+        serverUtil = new ServerUtil(this);
         serverUtil.getBoneCount(bone, new FindCallback()
 		{
 			public void done(List<ParseObject> objects, ParseException e)
 			{
-				
-				
+				try
+				{
+					if(objects.size() >0 && objects.get(0) != null) {
+						ParseObject countObject = objects.get(0);
+						String result_peer_count = getString(R.string.result_peer_count);
+						int peer_count = countObject.getInt("count");
+						result_peer_count = String.format(result_peer_count, peer_count);
+						txt_result3.setText(result_peer_count);
+						
+						if(activity_type == Constant.TYPE_ACTIVITY_NORMAL) 
+						{
+							countObject.put("count", peer_count+1);
+							countObject.saveInBackground();
+						}
+					}
+				}
+				catch (Exception e2)
+				{
+				}
 			}
 		});
     }

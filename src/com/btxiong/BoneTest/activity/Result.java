@@ -196,7 +196,8 @@ public class Result extends Activity
 			{
 				Intent intent = new Intent(Intent.ACTION_SEND);
 			    intent.setType("text/plain");
-			    intent.putExtra(Intent.EXTRA_TEXT, bone_str);  
+			    intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.result_share_1) + " " + bone_str 
+			    												+ "。 " + getString(R.string.result_share_2) + " " + bone_result);  
 			    startActivity(Intent.createChooser(intent, "Share with"));
 			
 			}

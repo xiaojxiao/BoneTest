@@ -4,26 +4,28 @@ import com.btxiong.BoneTest.R;
 
 public class Constant
 {
-	public static String PARSE_APP_ID = "bYklOp6HjnFhuFX5YuRYNOXMYLpLgdi5ff9savLp";
-	public static String PARSE_CLIENT_KEY = "M3EEqyLcPejt8ZZ3SmoWve4py8qdGxYZek3nbOmb";
-	public static String PARSE_MASTER_KEY = "lIJ10NwHG5pxtAeO4dHMWl5LfiahCBCQM5P48TuQ";
+	final public static String STORE_NAME = "BoneTest";
 	
-	public static int TYPE_SEX_MALE = 0;
-	public static int TYPE_SEX_FEMALE = 1;
+	final public static String PARSE_APP_ID = "bYklOp6HjnFhuFX5YuRYNOXMYLpLgdi5ff9savLp";
+	final public static String PARSE_CLIENT_KEY = "M3EEqyLcPejt8ZZ3SmoWve4py8qdGxYZek3nbOmb";
+	final public static String PARSE_MASTER_KEY = "lIJ10NwHG5pxtAeO4dHMWl5LfiahCBCQM5P48TuQ";
 	
-	public static int TYPE_DATE_LUNAR = 0;
-	public static int TYPE_DATE_AD = 1;
+	final public static int TYPE_SEX_MALE = 0;
+	final public static int TYPE_SEX_FEMALE = 1;
 	
-	public static int TYPE_ACTIVITY_NORMAL = 0;
-	public static int TYPE_ACTIVITY_HISTORY = 1;
-	public static int TYPE_ACTIVITY_CELEBRITY = 2;
+	final public static int TYPE_DATE_LUNAR = 0;
+	final public static int TYPE_DATE_AD = 1;
+	
+	final public static int TYPE_ACTIVITY_NORMAL = 0;
+	final public static int TYPE_ACTIVITY_HISTORY = 1;
+	final public static int TYPE_ACTIVITY_CELEBRITY = 2;
 
-	public static int TYPE_RECORD_NORMAL = 0;
-	public static int TYPE_RECORD_CELEBRITY = 1;
+	final public static int TYPE_RECORD_NORMAL = 0;
+	final public static int TYPE_RECORD_CELEBRITY = 1;
 	
 	
 	//天干
-	public static int[] STR_TIAN_GAN_ID = {
+	final public static int[] STR_TIAN_GAN_ID = {
 		R.string.TianGan_0,
 		R.string.TianGan_1,
 		R.string.TianGan_2,
@@ -37,7 +39,7 @@ public class Constant
 	};
 	
 	//地支
-	public static int[] STR_DI_ZHI_ID = {
+	final public static int[] STR_DI_ZHI_ID = {
 		R.string.DiZhi_0,
 		R.string.DiZhi_1,
 		R.string.DiZhi_2,
@@ -53,7 +55,7 @@ public class Constant
 	};
 	
 	//生肖
-	public static int[] STR_SHEN_XIAO_ID = {
+	final public static int[] STR_SHEN_XIAO_ID = {
 		R.string.ShengXiao_0,
 		R.string.ShengXiao_1,
 		R.string.ShengXiao_2,
@@ -69,7 +71,7 @@ public class Constant
 	};
 	
 	//男
-	public static int[] STR_MALE_ID = {
+	final public static int[] STR_MALE_ID = {
 		R.string.result_m_22,
 		R.string.result_m_23,
 		R.string.result_m_24,
@@ -123,7 +125,7 @@ public class Constant
 	};
 	
 	//女
-	public static int[] STR_FEMALE_ID = {
+	final public static int[] STR_FEMALE_ID = {
 		R.string.result_f_22,
 		R.string.result_f_23,
 		R.string.result_f_24,
@@ -176,7 +178,7 @@ public class Constant
 		R.string.result_f_71
 	};
 	
-	public static int[] STR_DETAIL_ID = {
+	final public static int[] STR_DETAIL_ID = {
 		R.string.result_detail_22,
 		R.string.result_detail_23,
 		R.string.result_detail_24,

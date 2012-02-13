@@ -6,6 +6,6 @@ public class MyDebug
 {
 	public static void print(String msg)
 	{
-		Log.i("BoneTest", msg);
+		//Log.i("BoneTest", msg);
 	}
 }

@@ -76,59 +76,29 @@ public class Menu extends Activity
 			}
 		});
         
-        //BoneDAO boneDAO = new BoneDAO(context);
-        
-        InsertCelebrity insertCelebrity = new InsertCelebrity(context);
-        insertCelebrity.Execute();
-        /*
-        //check version code
-		int newVersionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
-
-		SharedPreferences settings = getSharedPreferences(STORE_NAME, MODE_PRIVATE);
-		int oldVersionCode = settings.getInt("version_code", -1);
-		
-		//Log.i("Menu", newVersionCode + "   " + oldVersionCode);
-		//if the version has been changed, copy the database again
-		if(newVersionCode != oldVersionCode)
+        try
 		{
-			SharedPreferences.Editor editor = settings.edit();  
-			editor.putInt("version_code", newVersionCode); 
-			editor.commit(); 
+        	//check version code
+    		int newVersionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+
+    		SharedPreferences settings = getSharedPreferences(Constant.STORE_NAME, MODE_PRIVATE);
+    		int oldVersionCode = settings.getInt("version_code", -1);
+    		
+    		//Log.i("Menu", newVersionCode + "   " + oldVersionCode);
+    		//if the version has been changed, copy the database again
+    		if(newVersionCode != oldVersionCode)
+    		{
+    			InsertCelebrity insertCelebrity = new InsertCelebrity(context);
+    		    insertCelebrity.Execute();
+    			
+    			SharedPreferences.Editor editor = settings.edit();  
+    			editor.putInt("version_code", newVersionCode); 
+    			editor.commit(); 
+    		}
 		}
-		*/
-        
-        /*
-        BoneDAO boneDAO = new BoneDAO(context);
-        boneDAO.insertBone("Test1", 0, 1981, 2, 2, 11, 21, 0);
-        boneDAO.insertBone("测试", 0, 1983, 4, 25, 1, 0, 0);
-        
-        List<BoneObject> historyList = boneDAO.getHistoryList();
-        
-        for(BoneObject boneObject : historyList)
-        {
-        	MyDebug.print(boneObject.getName());
-        }
-        */
-        
-        /*
-        Parse.initialize(this, Constant.PARSE_APP_ID, Constant.PARSE_CLIENT_KEY);
-        
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("value", 25);
-        testObject.saveInBackground();
-        
-        ParseQuery query = new ParseQuery("TestObject");
-        query.whereGreaterThan("value", 30);
-        
-        query.countInBackground(new CountCallback() {
-            public void done(int count, ParseException e) {
-                if (e == null) {
-                    MyDebug.print(count + "");
-                } else {
-                    // The request failed
-                }
-            }
-        });
-        */
+		catch (Exception e)
+		{
+			// TODO: handle exception
+		}
     }
 }
